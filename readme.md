@@ -19,9 +19,28 @@ Use the `build-disk.sh` script to create a cloneable preinstalled disk image bas
 * USB bootable hybrid ISO image.
 * UEFI and BIOS mode supported.
 
+### Potential errors
+
+```
+./ubuntu/16.04/build-iso.sh: line 34: dos2unix: command not found
+
+fakeroot, while creating message channels: Function not implemented
+This may be due to a lack of SYSV IPC support.
+fakeroot: error while starting the `faked' daemon.
+```
+
 ### Prerequisites
 
-Run `sudo apt-get install p7zip-full cpio gzip genisoimage whois pwgen wget fakeroot isolinux xorriso` to install software tools required by the `build-iso.sh` script.
+#### build-iso.sh
+
+Run the following commands to install software tools required by the `build-iso.sh` script and prevent potential errors during ISO creation.
+
+```
+sudo apt-get install p7zip-full cpio gzip genisoimage whois pwgen wget fakeroot isolinux xorriso dos2unix
+sudo update-alternatives --set fakeroot /usr/bin/fakeroot-tcp
+```
+
+#### build-disk.sh
 
 Run `sudo apt-get install qemu-utils qemu-kvm` in addition to install software tools required by the `build-disk.sh` script.
 
