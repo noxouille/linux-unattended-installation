@@ -65,6 +65,13 @@ Boot the created ISO image on the target VM or physical machine. Be aware the se
 
 Power-on the machine and log into it as root using your ssh key. The ssh host key will be generated on first boot.
 
+**P.S.:**
+
+If you are testing this with VirtualBox, go to Settings > Network > Advanced > Port Forwarding.
+and `TCP` Protocol, with host IP `127.0.1.1`, host port `22`, Guest IP `10.0.2.` which is the IPv4 displayed on the screen of your Ubuntu Image, and Guest port `22`.
+
+For more details, see https://unix.stackexchange.com/a/146028
+
 #### Build disk images
 
 You can run the `build-disk.sh` script as regular user. No root permissions required, if you are able to run `kvm` with your user account.
