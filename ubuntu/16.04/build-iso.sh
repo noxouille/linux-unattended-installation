@@ -9,7 +9,7 @@ set -e
 SSH_PUBLIC_KEY_FILE=${1:-"$HOME/.ssh/id_rsa.pub"}
 TARGET_ISO=${2:-"`pwd`/ubuntu-16.04-netboot-amd64-unattended.iso"}
 # local copy of netboot.iso
-OFFLINE_ISO_DIR="`pwd`/ubuntu-16.04.5-server-amd64.iso"
+OFFLINE_ISO_DIR="`pwd`/mini.iso"
 
 # check if ssh key exists
 if [ ! -f "$SSH_PUBLIC_KEY_FILE" ];
